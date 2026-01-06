@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="bg">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beauty Academy by Beyda Lyuman | Ексклузивно обучение и процедури</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Открийте изкуството на красотата с Beyda Lyuman. Професионални курсове по миглопластика и ламиниране, и ексклузивни процедури в премиум обстановка.">
+    <meta name="keywords"
+        content="миглопластика, курсове, ламиниране, красота, Beyda Lyuman, Beauty Academy, професионален грим">
+    <meta name="author" content="Beyda Lyuman">
+    <meta property="og:title" content="Beauty Academy by Beyda Lyuman">
+    <meta property="og:description" content="Ексклузивно обучение и процедури за красота.">
+    <meta property="og:image" content="../images/1000046805.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BeautySalon",
+      "name": "Beauty Academy by Beyda Lyuman",
+      "image": "../images/1000046805.jpg",
+      "description": "Професионално обучение по миглопластика и ламиниране.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Bulgaria",
+        "addressCountry": "BG"
+      },
+      "telephone": "+359885298190",
+      "priceRange": "$$"
+    }
+    </script>
+
+    <style>
+        /* 
+         * PREMIUM THEME VARIABLES 
+         * Palette: Cream, Charcoal, Gold
+         */
+        :root {
+            /* Colors */
+            --bg-body: #FAF9F6;
+            /* Off-white cream */
+            --bg-surface: #FFFFFF;
+            --text-main: #2C2C2C;
+            /* Deep Charcoal */
+            --text-light: #666666;
+            --accent-gold: #D4AF37;
+            /* Muted Gold */
+            --accent-gold-light: #F3E5AB;
+            --accent-dark: #1A1A1A;
+
+            /* Typography */
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Mulish', sans-serif;
+
+            /* Spacing & Layout */
+            --container-width: 1200px;
+            --header-height: 80px;
+            --spacing-unit: 8px;
+
+            /* Effects */
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.03);
+            --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.06);
+            --radius-soft: 12px;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* RESET & BASE */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: var(--font-heading);
+            color: var(--accent-dark);
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        /* UTILITIES */
+        .container {
+            width: 100%;
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        @media(max-width: 768px) {
+            .section {
+                padding: 60px 0;
+            }
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .gold-text {
+            color: var(--accent-gold);
+        }
+
+        /* TYPOGRAPHY COMPONENTS */
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 0.5em;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-subtitle {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.85rem;
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* BUTTONS */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 16px 32px;
+            border: 1px solid transparent;
+            font-family: var(--font-body);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-dark);
+            color: #fff;
+            border-color: var(--accent-dark);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--accent-gold);
+            border-color: var(--accent-gold);
+            color: #000;
+        }
+
+        .btn-outline {
+            border-color: var(--accent-dark);
+            color: var(--accent-dark);
+        }
+
+        .btn-outline:hover {
+            background-color: var(--accent-dark);
+            color: #fff;
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(250, 249, 246, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 15px 0;
+            transition: var(--transition);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--accent-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        @media(max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            /* Simplified mobile menu for single file */
+        }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.2));
+            z-index: 1;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('../images/1000046805.jpg');
+            /* Relative path */
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+            animation: kenBurns 20s infinite alternate;
+        }
+
+        @keyframes kenBurns {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(1.1);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: #fff;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: fadeUp 1s 0.2s forwards;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            opacity: 0;
+            animation: fadeUp 1s 0.4s forwards;
+        }
+
+        .hero-btns {
+            opacity: 0;
+            animation: fadeUp 1s 0.6s forwards;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ABOUT / STATS */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            background: #fff;
+            padding: 3rem;
+            border-radius: var(--radius-soft);
+            box-shadow: var(--shadow-soft);
+            transform: translateY(-50px);
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-family: var(--font-heading);
+            color: var(--accent-gold);
+            font-weight: 700;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* SERVICES (Cards) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: var(--radius-soft);
+            transition: var(--transition);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--accent-gold);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            font-family: var(--font-heading);
+            margin: 1rem 0;
+            display: block;
+        }
+
+        /* GALLERY (Masonry-like) */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: var(--radius-soft);
+            height: 300px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        /* CONTACT & BOOKING */
+        .booking-section {
+            background: #fff;
+            position: relative;
+        }
+
+        .contact-form {
+            background: var(--bg-body);
+            padding: 3rem;
+            border-radius: var(--radius-soft);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px;
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            font-family: var(--font-body);
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--accent-dark);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        /* MOBILE STICKY BAR */
+        .mobile-sticky {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 400px;
+            background: #fff;
+            padding: 10px;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            z-index: 9999;
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media(max-width: 768px) {
+            .mobile-sticky {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 1.5rem;
+            }
+        }
+
+        .sticky-btn {
+            background: var(--accent-dark);
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            flex: 1;
+            margin: 0 5px;
+            text-align: center;
+        }
+
+        .sticky-btn.call {
+            background: #f0f0f0;
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">Beauty Academy <span>By Beyda</span></a>
+            <nav class="nav-links">
+                <a href="#about">За мен</a>
+                <a href="#services">Услуги</a>
+                <a href="#gallery">Портфолио</a>
+                <a href="#contact">Контакти</a>
+            </nav>
+            <a href="#booking" class="btn btn-primary"
+                onclick="Calendly.initPopupWidget({url: 'https://calendly.com/beydalyuman'});return false;">Запази
+                част</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="container hero-content">
+            <span class="section-subtitle" style="color: rgba(255,255,255,0.8);">Добре дошли</span>
+            <h1>Изкуството на перфектния поглед</h1>
+            <p>Професионални курсове и ексклузивни процедури от сертифициран експерт.</p>
+            <div class="hero-btns">
+                <button class="btn btn-primary"
+                    onclick="Calendly.initPopupWidget({url: 'https://calendly.com/beydalyuman'});return false;">Запази
+                    час</button>
+                <a href="#services" class="btn" style="color:#fff; border:1px solid #fff; margin-left: 10px;">Разгледай
+                    услугите</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section>
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Доволни Клиенти</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">6+</div>
+                    <div class="stat-label">Години Опит</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Сертифицирано Обучение</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="text-center" style="max-width: 800px; margin: 0 auto;">
+                <span class="section-subtitle">За мен</span>
+                <h2 class="section-title">Beyda Lyuman</h2>
+                <div
+                    style="margin: 2rem 0; border-radius: var(--radius-soft); overflow: hidden; box-shadow: var(--shadow-soft);">
+                    <!-- Using relative path to local image. Replace with WP Media URL in WordPress -->
+                    <img src="../images/1000046806.jpg" alt="Beyda Lyuman" style="width:100%;">
+                </div>
+                <p style="font-size: 1.1rem; color: var(--text-light);">
+                    Медицински козметик с дълбоки познания в областта на красотата.
+                    Моята мисия е да предам знанията и опита си на следващото поколение специалисти,
+                    както и да предоставя безкомпромисно качество на услугите.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="section" id="services" style="background: #fff;">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Ценоразпис</span>
+                <h2 class="section-title">Нашите Услуги</h2>
+            </div>
+
+            <div class="services-grid" style="margin-top: 3rem;">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <h3>Миглопластика</h3>
+                    <p style="color:var(--text-light)">Класически или обемен метод за изразителен поглед.</p>
+                    <span class="price">от 65 лв</span>
+                    <ul style="margin: 1rem 0; color:var(--text-light); font-size: 0.9rem;">
+                        <li>• Косъм по косъм</li>
+                        <li>• Обемни техники (2D-4D)</li>
+                        <li>• Mega Volume</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width:100%"
+                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/beydalyuman'});return false;">Запази
+                        час</button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="service-card" style="border-color: var(--accent-gold);">
+                    <span
+                        style="position:absolute; top:-10px; right: 20px; background:var(--accent-gold); color:#000; padding: 4px 12px; font-size:0.8rem; font-weight:700; border-radius:20px;">POPULAR</span>
+                    <h3>Ламиниране</h3>
+                    <p style="color:var(--text-light)">Подхранване и извиване на естествени мигли.</p>
+                    <span class="price">от 50 лв</span>
+                    <ul style="margin: 1rem 0; color:var(--text-light); font-size: 0.9rem;">
+                        <li>• Ламиниране на мигли</li>
+                        <li>• Ламиниране на вежди</li>
+                        <li>• Боядисване с къна</li>
+                    </ul>
+                    <button class="btn btn-primary" style="width:100%"
+                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/beydalyuman'});return false;">Запази
+                        час</button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <h3>Професионален Грим</h3>
+                    <p style="color:var(--text-light)">За вашия специален повод.</p>
+                    <span class="price">от 50 лв</span>
+                    <ul style="margin: 1rem 0; color:var(--text-light); font-size: 0.9rem;">
+                        <li>• Дневен грим</li>
+                        <li>• Вечерен грим</li>
+                        <li>• Сватбен грим</li>
+                    </ul>
+                    <button class="btn btn-outline" style="width:100%"
+                        onclick="Calendly.initPopupWidget({url: 'https://calendly.com/beydalyuman'});return false;">Запази
+                        час</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery -->
+    <section class="section" id="gallery">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Портфолио</span>
+                <h2 class="section-title">Галерия</h2>
+            </div>
+            <div class="gallery-grid" style="margin-top: 2rem;">
+                <div class="gallery-item"><img src="../images/1000046787.jpg" alt="Muro Work 1" loading="lazy"></div>
+                <div class="gallery-item"><img src="../images/1000046804.jpg" alt="Muro Work 2" loading="lazy"></div>
+                <!-- Adding duplicates for grid demo purposes -->
+                <div class="gallery-item"><img src="../images/1000046803.jpg" alt="Muro Work 3" loading="lazy"></div>
+                <div class="gallery-item"><img src="../images/1000046807.jpg" alt="Muro Work 4" loading="lazy"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Inline -->
+    <section class="section" id="booking" style="background:#fff;">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Запази час онлайн</h2>
+            </div>
+            <!-- Calendly Inline Widget -->
+            <div class="calendly-inline-widget" data-url="https://calendly.com/beydalyuman"
+                style="min-width:320px;height:700px;"></div>
+        </div>
+    </section>
+
+    <!-- Contact Form (n8n Webhook) -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="text-center">
+                <span class="section-subtitle">Свържете се с нас</span>
+                <h2 class="section-title">Имате въпроси?</h2>
+            </div>
+
+            <form class="contact-form" id="consultation-form" style="max-width: 600px; margin: 2rem auto;">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="name" placeholder="Вашето име" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" class="form-control" name="phone" placeholder="Телефон за връзка" required>
+                </div>
+                <div class="form-group">
+                    <select class="form-control" name="interest">
+                        <option value="">От какво се интересувате?</option>
+                        <option value="course">Курсове</option>
+                        <option value="procedure">Процедури</option>
+                        <option value="other">Друго</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" name="message" rows="4" placeholder="Вашето съобщение..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;">Изпрати запитване</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h3>Beauty Academy by Beyda Lyuman</h3>
+            <p>Професионално обучение и грижа за красотата</p>
+            <div style="margin-top: 1rem; opacity: 0.7; font-size: 0.9rem;">
+                &copy; 2025 Всички права запазени.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky Floating Bar -->
+    <div class="mobile-sticky">
+        <a href="tel:+359885298190" class="sticky-btn call">
+            <span style="margin-right:5px;">📞</span> Обади се
+        </a>
+        <button class="sticky-btn"
+            onclick="Calendly.initPopupWidget({url: 'https://calendly.com/beydalyuman'});return false;">
+            📅 Запази час
+        </button>
+    </div>
+
+    <!-- SCRIPTS -->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // 1. n8n Form Submission Logic
+            const form = document.getElementById('consultation-form');
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerText;
+
+                btn.innerText = 'Изпращане...';
+                btn.disabled = true;
+
+                // Gather data
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+                data.submittedAt = new Date().toISOString();
+
+                // Mock submission for now (replace URL with actual webhook)
+                // const WEBHOOK_URL = 'YOUR_N8N_WEBHOOK_URL';
+
+                setTimeout(() => {
+                    alert('Благодарим Ви! Вашето запитване е получено.');
+                    form.reset();
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                }, 1000);
+
+                /* Uncomment when you have the URL
+                fetch(WEBHOOK_URL, {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(data)
+                }).then(...)
+                */
+            });
+
+            // 2. Intersection Observer for Animations
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Animate elements
+            document.querySelectorAll('.service-card, .gallery-item').forEach(el => {
+                el.style.opacity = 0;
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease-out';
+                observer.observe(el);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
